@@ -1,4 +1,4 @@
-<view title="'Employees'">
+<ion-view title="'Employees'">
 
     <div class="bar bar-subheader item-input-inset">
         <label class="item-input-wrapper">
@@ -9,14 +9,14 @@
         <button class="button button-clear" ng-click="search()">Search</button>
     </div>
 
-    <content has-header="true" has-subheader="true">
-        <list>
-            <item ng-repeat="employee in employees" type="item-text-wrap" href="#/employee/{{employee.id}}">
+    <ion-content has-header="true" has-subheader="true">
+        <ion-list>
+            <ion-item ng-repeat="employee in employees" type="item-text-wrap" href="#/employee/{{employee.id}}">
                 <h3>{{employee.firstName}} {{employee.lastName}}</h3>
                 <p>{{employee.title}}</p>
+            </ion-item>
             </item>
-            </item>
-        </list>
-    </content>
+        </ion-list>
+    </ion-content>
 
-</view>
+</ion-view>
