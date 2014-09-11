@@ -1,0 +1,25 @@
+<div class="modal">
+  <ion-header-bar>
+    <h1 class="title">{{event.title}}</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="hideEvents()">Fechar</button>
+    </div>
+  </ion-header-bar>
+  <ion-content id="content-events-popup">
+    <p>
+      <strong>Descrição</strong>
+      <br />
+      {{event.description}}
+    </p>
+    <p>
+      <strong>Informações</strong>
+      <br />
+      {{event.information}}
+    </p>
+    <p>
+      <strong>Atrações</strong>
+      <br />
+      {{event.attractions}}
+    </p>
+  </ion-content>
+</div>

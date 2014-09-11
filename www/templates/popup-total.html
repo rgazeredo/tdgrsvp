@@ -1,0 +1,16 @@
+<div class="modal">
+  <ion-header-bar>
+    <h1 class="title">TODOS OS EVENTOS</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="hideTotal()">Fechar</button>
+    </div>
+  </ion-header-bar>
+  <ion-content id="content-events-popup">
+    <div class="list">
+      <a class="item item-icon-left" ng-repeat="(color, value) in total">
+        <img ng-if="color != null && color != ''" src="img/img-color-{{color}}.png" alt="{{color}}">
+        <span class="badge badge-dark">{{value}}</span>
+      </a>
+    </div>
+  </ion-content>
+</div>

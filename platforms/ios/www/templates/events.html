@@ -1,0 +1,36 @@
+<ion-view title="Events" hide-nav-bar="true" id="view-login">
+  <ion-content class="ion-content">
+    <div id="content-events">
+        <h1>EVENTOS</h1>
+        <p>SELECIONE O EVENTO DESEJADO OU CLIQUE NO BOTÃO <strong>TODOS OS CONVIDADOS</strong></p>
+        <div align="center">
+          <div style="float: left; padding-top:6px;">
+            <input type="text" ng-model="dateEvent" ng-click="showDate()" style="width:85px; padding:5px;" placeholder="DATA">
+          </div>
+          <div style="float: right; width:457px;" align="left">
+            <a href="#/letters/0">
+              <button class="button button-stable">
+                TODOS OS CONVIDADOS
+              </button>
+            </a>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <br />
+        <br />
+        <p ng-if="events.length == 0">NENHUM EVENTO CADASTRADO</p>
+        <div class="list" ng-if="events.length > 0">
+          <div align="left" class="item item-button-right" ng-repeat="event in events">
+            <a href="#/letters/{{event.id}}">
+              <div class="item-events">
+                {{event.title}}
+              </div>
+            </a>
+            <button class="button button-clear" ng-click="showEvents({{event}})">
+              <img src="img/bt_info.png" alt="Informações">
+            </button>
+          </div>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

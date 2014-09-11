@@ -1,0 +1,37 @@
+<div class="modal">
+  <ion-header-bar>
+    <h1 class="title">EXTRA</h1>
+  </ion-header-bar>
+  <ion-content id="content-name-popup">
+    <form>
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Nome</span>
+            <input type="text" ng-model="nameData.name">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Evento</span>
+            <select ng-model="nameData.ui_event_id">
+              <option value="{{event.id}}" ng-repeat="event in events">{{event.title}}</option>
+            </select>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Lugar</span>
+            <input type="text" ng-model="nameData.seat">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Controle</span>
+            <input type="text" ng-model="nameData.control">
+          </label>
+        </div>
+        <div align="center">
+          <button class="button button-assertive" ng-click="hideInfoExtra()">
+              CANCELAR
+            </button>
+            <button class="button button-balanced" ng-click="saveNameExtra(name)">
+              SALVAR
+            </button>
+        </div>
+      </form>
+  </ion-content>
+</div>

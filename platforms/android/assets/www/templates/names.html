@@ -1,0 +1,54 @@
+<ion-view title="Events" hide-nav-bar="true" id="view-login">
+  <ion-content class="ion-content">
+    <div id="content-names">
+      <div id="header-buttons">
+        <div id="header-buttons-back">
+          <a href="javascript:history.back()">
+            <img src="img/bt_back_normal.png" alt="VOLTAR">
+          </a>
+        </div>
+        <div id="header-buttons-home">
+          <a href="#events">
+            <img src="img/bt_home.png" alt="HOME">
+          </a>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <h1>
+        <small>{{dateEvent}}</small>
+        <br />
+        {{event.title}}
+      </h1>
+      <p ng-if="names.length == 0">NENHUM NOME CADASTRADO</p>
+      <div class="list" ng-if="names.length > 0">
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="text" placeholder="Buscar" ng-model="searchName">
+        </label>
+      </div>
+      <div class="item item-header item-stable row row-item">
+        <div class="col col-8 col-header">Cor</div>
+        <div class="col col-sep col-header">Nome</div>
+        <div class="col col-sep col-header">Evento</div>
+        <div class="col col-10 col-sep col-header">Lugar</div>
+        <div class="col col-10 col-sep col-header">Controle</div>
+        <div class="col col-8 col-sep">
+          <img src="img/bt_check_on.png" alt="Check">
+        </div>
+      </div>
+      <div class="item row row-item" ng-repeat="rowName in names | filter:searchName">
+        <div class="col col-8 col-img">
+          <img ng-if="rowName.color != null && rowName.color != ''" src="img/img-color-{{rowName.color}}.png" alt="{{rowName.color}}">
+        </div>
+        <div class="col col-left col-sep col-item" style="white-space: pre;">{{rowName.name}}</div>
+        <div class="col col-left col-sep col-item" style="white-space: pre;">{{rowName.event_title}}</div>
+        <div class="col col-10 col-sep col-item">{{rowName.seat}}</div>
+        <div class="col col-10 col-sep col-item">{{rowName.control}}</div>
+        <div class="col col-8 col-sep col-img">
+          <img ng-if="rowName.confirmed == '0'" src="img/bt_check_off.png" alt="Não confirmado" ng-click="showInfo(rowName)">
+          <img ng-if="rowName.confirmed == '1'" src="img/bt_check_on.png" alt="Confirmado" ng-click="showInfo(rowName)">
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,21 @@
+<ion-view title="Login" hide-nav-bar="true" id="view-login">
+  <ion-content class="ion-content">
+    <div id="content-login">
+      <form ng-submit="doLogin()">
+        <div class="list list-inset">
+          <label class="item item-input">
+            <input type="text" placeholder="E-mail" ng-model="loginData.email">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Senha" ng-model="loginData.password">
+          </label>
+          <label class="item">
+            <button class="button button-block button-dark">
+              ENTRAR
+            </button>
+          </label>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>
